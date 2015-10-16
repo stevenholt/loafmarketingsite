@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'homev2' => 'static_pages#homev2'
 
+  get 'chat' => 'firebase#firechat'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
