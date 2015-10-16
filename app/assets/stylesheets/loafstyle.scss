@@ -76,11 +76,14 @@ header {
         .2em .2em .2em black;
     }
   }
-  .special {
+  .meetloaf {
     color: $orange;
     opacity: 0.3;
-    font-size: 1em;
+    font-size: 6em;
     line-height: 1em;
+  }
+  .special {
+    color: $orange;
   }
   .strike {
     text-decoration: line-through;
