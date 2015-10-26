@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require shims
+//= require firebase
+//= require firechat-default
 //= require turbolinks
 //= require_tree .
+
+

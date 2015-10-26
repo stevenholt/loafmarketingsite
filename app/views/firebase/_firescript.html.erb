@@ -1,10 +1,12 @@
-<script type='text/javascript'>
+<script>
   // Create a new Firebase reference, and a new instance of the Login client
-  var chatRef = new Firebase('https://loaf.firebaseio.com/chat');
+  var chatRef = new Firebase('https://loaf.firebaseio.com/chat'),
+       target = document.getElementById("firechat-wrapper");
+         
   chatRef.onAuth(function(authData) {
     // Once authenticated, instantiate Firechat with our user id and user name
     if (authData) {
-      var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
+      chat = new FirechatUI(chatRef, target);
       chat.setUser(authData.uid, authData[authData.provider].displayName);
     }
   });

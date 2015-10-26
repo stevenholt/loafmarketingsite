@@ -257,13 +257,202 @@ header {
 .blahblah {
   background-color: #6699cc;
 }
-
-
-.message-content {
-  color: #6699ff;
+#firechat-wrapper{
+  height: 100%;
 }
 
-#firechat-wrapper {
-  
+#firechat{
+  height: 100%;
+  #firechat-tabs{
+    min-height: 100%;
+  }
+  #firechat-tab-content{
+    height: 100%;
+    .tab-pane{
+      height: 100%;
+    }
+  }  
+  .tab-pane{
+    height: 100%;
+    textarea{
+      position: absolute;
+      bottom: 0;
+    }
+  }
 }
-  
+.chat{
+  background-color: #212121;
+  height: 100%;
+  bottom: 0;
+}
+
+.tab-pane-menu{
+  .firechat-dropdown-menu, .firechat-dropdown{
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+//building chat from scratch
+
+//functions
+$banner-height: 0px;
+$message-create-height: 88px; 
+$chat-bg: #212121;
+
+@function getchatheight(){
+  @return 100vh - get-vh($banner-height) - get-vh($message-create-height);
+}
+
+@function getbannerheight(){
+  @return get-vh($banner-height);
+}
+
+@function getpaneheight(){
+  @return 100vh - get-vh($banner-height);
+}
+
+@function get-vh($x_px){
+  $vh-context: (1000 * .01) * 1px;
+  @return ($x_px/$vh-context) * 1vh;
+}
+
+
+#teams-picker, #channels, #chat-pane{
+  //make all 3 panes full height but account for the banner height...
+  height: getpaneheight();
+}
+
+
+body{
+  height: 100vh;
+  .container-fluid{
+    height: 100vh;
+  }
+}
+#banner{
+  background-color: red;
+  height: $banner-height;
+  z-index: 2;
+}
+#teams-picker{
+  background-color: $orange;
+}
+#channels{
+  background-color: black;
+  li{
+    a{
+      color: #a1a1a1;
+    }
+    list-style-type: none;
+    height: 24px;
+    font-size: 14px;
+  }
+}
+#chat-pane{
+  background-color: black;
+  padding-left: 0;
+  padding-right: 0;
+  display: table;
+  .row{
+    display: table-row;
+    height: 100%;
+    vertical-align: bottom;
+    #message-stream, #message-create{
+      display: table-cell;
+    }
+  }
+}
+#message-stream{
+  background-color: #9911cc;
+  height: getchatheight();
+  max-height: getchatheight();
+  overflow-y: scroll;
+  position: absolute;
+  padding-bottom: $message-create-height;
+
+}
+#message-create{
+  background-color: #cc0000;
+  height: $message-create-height;
+  box-sizing: border-box;
+  vertical-align: bottom;
+  z-index:1;
+  position: absolute;
+  bottom: 0;
+}
+
+.chat{
+  overflow-y: scroll;
+  max-height: getchatheight();
+  padding-bottom: $message-create-height;
+}
+
+
+
+
+.messageInputArea{
+  display: block;
+  background-color: $orange;
+  position: absolute;
+  bottom: 0;
+  height: get-vh(88px);
+  label{
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  textarea{
+    height: get-vh(40px);
+    width: 500px;
+    margin-left: 3vh;
+    postion: absolute;
+    top: 1vh;
+  }
+}
+.message{
+  color: $orange;
+  padding-bottom: 14px;
+  margin-left: 20px;
+  &:first-child{
+    margin-top: 20px;
+  }
+  .name{
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  em{
+    color: #bbbbbb;
+    font-weight: 100;
+    font-size: 12px;
+  }
+  .message-content{
+    padding-left: 14px;
+  }
+}
+
+#firechat-tab-list{
+  li{
+    a{
+      background-color: #333333;
+      color: white;
+    }
+  }
+  .active{
+    background-color: #333333;
+    a{
+      background-color: black;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+  }
+  border-bottom: none;
+}

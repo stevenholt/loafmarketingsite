@@ -85,6 +85,19 @@
 		.col-sm-1
 		.col-sm-12
 			%a.btn{"title" => "SIGN UP NOW", "data-toggle" => "modal", "data-target" => "#myModal"} SIGN UP NOW
+.row
+	.col-sm-12
+		%p.bold RoomID = -K0kvc-phL-i3mqzwG_D
+		- @roommessages.each do |i|
+			%p= i
+		%p= @amessagetext
+
+		%h4= @messages
+
+		- @allmessages.each do |msg|
+			%h4= msg
+
+
 
 .modal.fade#myModal
 	.modal-dialog
