@@ -5,7 +5,7 @@
 
 this["FirechatDefaultTemplates"] = this["FirechatDefaultTemplates"] || {};
 
-this["FirechatDefaultTemplates"]["templates/layout-full.html"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape; with (obj) {__p += '<div id=\"firechat\" class=\"row\">\r\n  <div class=\"col-sm-1\">\r\n  <\/div>\r\n  <div class=\"col-sm-2\" id=\"channels\">\r\n    <div class=\'firechat-dropdown\' style=\'\'>\r\n      <a id=\'firechat-btn-rooms\' class=\'firechat-dropdown-toggle btn full\' data-toggle=\"firechat-dropdown\" href=\'#\'>\r\n        <span class=\'icon user-chat\'><\/span>\r\n        Chat Rooms\r\n        <span class=\'caret\'><\/span>\r\n      <\/a>\r\n      <div class=\'firechat-dropdown-menu full\' role=\'menu\'>\r\n        <ul id=\'firechat-room-list\'><\/ul>\r\n        <div class=\'firechat-dropdown-footer aligncenter\'>\r\n          <button type=\'button\' class=\'btn twothird center\' id=\'firechat-btn-create-room-prompt\'>Create Room<\/button>\r\n        <\/div>\r\n      <\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"col-sm-9\" id=\"chat-pane\">\r\n    <div id=\'firechat-tabs\'>\r\n      <ul id=\'firechat-tab-list\' class=\'nav nav-tabs clearfix\'><\/ul>\r\n      <div id=\'firechat-tab-content\' class=\'tab-content\'><\/div>\r\n    <\/div>\r\n  <\/div>\r\n<\/div>\r\n';}return __p};
+this["FirechatDefaultTemplates"]["templates/layout-full.html"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape; with (obj) {__p += '<div id=\"firechat\" class=\"row\">\r\n  <div class=\"col-sm-1\" id=\"teams-picker\">\r\n  <\/div>\r\n  <div class=\"col-sm-2\" id=\"channels\">\r\n    <div class=\'firechat-dropdown\' style=\'\'>\r\n      <a id=\'firechat-btn-rooms\' class=\'firechat-dropdown-toggle btn full\' data-toggle=\"firechat-dropdown\" href=\'#\'>\r\n        <span class=\'icon user-chat\'><\/span>\r\n        Chat Rooms\r\n        <span class=\'caret\'><\/span>\r\n      <\/a>\r\n      <div class=\'firechat-dropdown-menu full\' role=\'menu\'>\r\n        <ul id=\'firechat-room-list\'><\/ul>\r\n        <div id=\'firechat-tabs\'>\r\n          <ul id=\'firechat-tab-list\' class=\'nav nav-tabs clearfix\'><\/ul>\r\n        <\/div>\r\n        <div class=\'firechat-dropdown-footer aligncenter\'>\r\n          <button type=\'button\' class=\'btn twothird center\' id=\'firechat-btn-create-room-prompt\'>Create Room<\/button>\r\n        <\/div>\r\n      <\/div>\r\n    <\/div>\r\n  <\/div>\r\n  <div class=\"col-sm-9\" id=\"chat-pane\">\r\n    <div id=\'firechat-tabs\'>\r\n      <ul id=\'firechat-tab-list\' class=\'nav nav-tabs clearfix\'><\/ul>\r\n      <div id=\'firechat-tab-content\' class=\'tab-content\'><\/div>\r\n    <\/div>\r\n  <\/div>\r\n<\/div>';}return __p};
 
 this["FirechatDefaultTemplates"]["templates/layout-popout.html"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape;with (obj) {__p += '<div id=\'firechat\' class=\'full\'>\n<div id=\'firechat-tabs\' class=\'clearfix\'>\n<ul id=\'firechat-tab-list\' class=\'nav nav-tabs clearfix\'></ul>\n<div id=\'firechat-tab-content\' class=\'tab-content\'></div>\n</div>\n</div>';}return __p};
 
@@ -1637,8 +1637,8 @@ this["FirechatDefaultTemplates"]["templates/user-search-list-item.html"] = funct
 
     // Dynamically update the width of each tab based upon the number open.
     var tabs = this.$tabList.children('li');
-    var tabWidth = Math.floor($('#firechat-tab-list').width() / tabs.length);
-    this.$tabList.children('li').css('width', tabWidth);
+    //var tabWidth = Math.floor($('#firechat-tab-list').width() / tabs.length);
+    //this.$tabList.children('li').css('width', tabWidth);
 
     // Update the room listing to reflect that we're now in the room.
     this.$roomList.children('[data-room-id=' + roomId + ']').children('a').addClass('highlight');

@@ -281,7 +281,7 @@ header {
   }
 }
 .chat{
-  background-color: #212121;
+  background-color: #121212;
   height: 100%;
   bottom: 0;
 }
@@ -342,7 +342,7 @@ body{
   z-index: 2;
 }
 #teams-picker{
-  background-color: $orange;
+  background-color: black;
 }
 #channels{
   background-color: black;
@@ -356,7 +356,7 @@ body{
   }
 }
 #chat-pane{
-  background-color: black;
+  background-color: #121212;
   padding-left: 0;
   padding-right: 0;
   display: table;
@@ -402,7 +402,7 @@ body{
   background-color: $orange;
   position: absolute;
   bottom: 0;
-  height: get-vh(88px);
+  height: $message-create-height;
   label{
     color: white;
     margin-top: auto;
@@ -417,6 +417,7 @@ body{
   }
 }
 .message{
+  background-color: #121212;
   color: $orange;
   padding-bottom: 14px;
   margin-left: 20px;
@@ -439,18 +440,25 @@ body{
 }
 
 #firechat-tab-list{
+  width: 100%;
   li{
+    height: 100%;
+    width: 100%;
+    margin: 0 0;
     a{
-      background-color: #333333;
-      color: white;
+      background-color: black;
+      color: #999999;
+      margin-right: 0px;
+      padding: 4px 15px;
+      border-radius: 4px;
     }
   }
   .active{
-    background-color: #333333;
+    background-color: black;
     a{
-      background-color: black;
+      background-color: $orange;
       color: white;
-      border: none;
+      border: 1px solid white;
       font-weight: bold;
     }
   }

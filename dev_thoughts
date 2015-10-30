@@ -1,0 +1,6 @@
+Working on Chat...
+
+	At launch, just list all the rooms for the team we're logged into
+
+	Then, when selected, display the messages in the Chat Pane
+		(script to set "firechat-tab-content" .div class to "active")
